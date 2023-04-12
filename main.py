@@ -1,4 +1,4 @@
-from classes import TreeStore2
+from classes import TreeStore
 
 items = [
     {"id": 1, "parent": "root"},
@@ -11,7 +11,15 @@ items = [
     {"id": 8, "parent": 4, "type": None}
 ]
 
-ts = TreeStore2(items)
-print(ts.getItem(7))
-print(ts.getItem(7, True))
-print(ts.getItem(7))
+ts = TreeStore(items)
+print(f'Получение всех элементов дерева:{ts.getAll()}')
+print('')
+print(f'Получение элемента 7:{ts.getItem(7)}')
+print(f'Получение получение потомков элемента 4: {ts.getChildren(4)}')
+print('')
+print(f'Получение получение потомков элемента 5 :{ts.getChildren(5)}')
+print('')
+print(f'Получение дерева для элемента 7 :{ts.getParentAll(7)}')
+
+
+
